@@ -37,7 +37,7 @@ A secure Employee Management System built using **Spring Boot**, **Spring Securi
 
 ## 🛠️ Technologies Used
 
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Security
 - JWT (JSON Web Token)
