@@ -5,10 +5,12 @@ import com.example.employee.Entity.Employee;
 import com.example.employee.Exception.EmployeeNotFoundException;
 import com.example.employee.Repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImplement implements EmployeeService {
@@ -22,6 +24,7 @@ public class EmployeeServiceImplement implements EmployeeService {
         employee.setEmail(dto.getEmail());
         employee.setSalary(dto.getSalary());
         employee.setDept(dto.getDept());
+        log.info("Employee Created");
         return employeeRepository.save(employee);
     }
 
@@ -43,12 +46,14 @@ public class EmployeeServiceImplement implements EmployeeService {
         employee.setEmail(dto.getEmail());
         employee.setDept(dto.getDept());
         employee.setSalary(dto.getSalary());
+        log.info("Employee Updated");
         return employeeRepository.save(employee);
     }
 
     @Override
     public void deleteEmployee(Long id) {
         employeeRepository.deleteById(id);
+        log.info("Employee Deleted");
     }
 
     @Override
